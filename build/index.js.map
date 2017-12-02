@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../src/",
+  "sources": [
+    "index.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;EAAA;AAAA,MAAA,CAAA,EAAA;;EACA,MAAA,GAAS;;AACT;IACE,MAAA,GAAS,OAAO,CAAC,MAAR,CAAe,KAAf,EADX;GAAA,aAAA;IAEM;IACJ,MAAA,GAAS,OAAO,CAAC,MAAR,CAAe,KAAf,EAAsB,EAAtB,EAHX;;;EAKA,MAAM,CAAC,OAAP,CAAe,QAAf,EAAyB,QAAA,CAAA,CAAA;WACvB;MAAA,MAAA,EAAQ,QAAA,CAAC,IAAD,CAAA;eACN;UAAA,GAAA,EAAK,QAAA,CAAC,KAAD,CAAA;YACH,IAAG,IAAI,CAAC,IAAL,KAAe,KAAlB;cACE,IAAI,CAAC,IAAL,GAAY;qBACZ,IAAI,CAAC,OAAL,GAAe,MAFjB;aAAA,MAAA;cAIE,IAAG,IAAI,CAAC,OAAL,KAAgB,MAAnB;uBACE,IAAI,CAAC,OAAL,GAAe,MADjB;eAAA,MAAA;uBAGE,IAAI,CAAC,OAAL,GAAe,OAHjB;eAJF;;UADG,CAAL;UASA,QAAA,EAAU,QAAA,CAAC,KAAD,CAAA;YACR,IAAG,CAAI,IAAI,CAAC,IAAZ;cACE,IAAI,CAAC,IAAL,GAAY,GADd;;YAEA,IAAG,IAAI,CAAC,IAAI,CAAC,OAAV,CAAkB,KAAlB,CAAA,KAA4B,CAAC,CAAhC;cACE,IAAI,CAAC,IAAL,GAAY;qBACZ,IAAI,CAAC,OAAL,GAAe,MAFjB;aAAA,MAAA;cAIE,IAAG,IAAI,CAAC,IAAI,CAAC,OAAV,CAAkB,GAAlB,CAAA,KAA0B,CAA7B;gBACE,IAAI,CAAC,IAAL,GAAY;uBACZ,IAAI,CAAC,OAAL,GAAe,MAFjB;eAAA,MAAA;gBAIE,IAAI,CAAC,IAAL,GAAY,CAAA,CAAA,CAAA,CAAI,KAAJ,CAAA;uBACZ,IAAI,CAAC,OAAL,GAAe,OALjB;eAJF;;UAHQ,CATV;UAsBA,KAAA,EAAO,QAAA,CAAC,KAAD,CAAA;AACL,gBAAA;mBAAA;cAAA,UAAA,EAAY,IAAZ;cACA,OAAA,EAAS,CAAA,CAAC,CAAD,UAAK,IAAI,CAAC,IAAI,CAAC,OAAV,CAAkB,KAAlB,EAAL,OAAA,GAAgC,CAAhC,CADT;cAEA,IAAA,EAAM,IAAI,CAAC,OAAL,KAAgB;YAFtB;UADK;QAtBP;MADM;IAAR;EADuB,CAAzB;AAPA",
+  "sourcesContent": [
+    "'use strict'\r\nmodule = null\r\ntry\r\n  module = angular.module 'ndx'\r\ncatch e\r\n  module = angular.module 'ndx', []\r\n\r\nmodule.factory 'Sorter', ->\r\n  create: (opts) ->\r\n    set: (field) ->\r\n      if opts.sort isnt field\r\n        opts.sort = field\r\n        opts.sortDir = 'ASC'\r\n      else\r\n        if opts.sortDir is 'DESC'\r\n          opts.sortDir = 'ASC'\r\n        else\r\n          opts.sortDir = 'DESC'\r\n    setLocal: (field) ->\r\n      if not opts.sort\r\n        opts.sort = ''\r\n      if opts.sort.indexOf(field) is -1\r\n        opts.sort = field\r\n        opts.sortDir = 'ASC'\r\n      else\r\n        if opts.sort.indexOf('-') is 0\r\n          opts.sort = field\r\n          opts.sortDir = 'ASC'\r\n        else\r\n          opts.sort = \"-#{field}\"\r\n          opts.sortDir = 'DESC'\r\n    class: (field) ->\r\n      \"has-sort\": true\r\n      sorting: -1 < opts.sort.indexOf(field) < 2\r\n      desc: opts.sortDir is 'DESC'"
+  ]
+}

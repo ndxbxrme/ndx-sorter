@@ -1,0 +1,13 @@
+{
+  "generator-ndx": {
+    "filters": {
+      "appType": "cli",
+      "client": true,
+      "description": "list sorting for ndx-framework",
+      "appName": "ndx-sorter",
+      "gitname": "ndxbxrme",
+      "gitemail": "lewis_the_cat@hotmail.com"
+    },
+    "appname": "github"
+  }
+}
