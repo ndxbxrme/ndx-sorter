@@ -48,7 +48,7 @@ module.factory 'Sorter', ->
             opts.sort = field
             opts.sortDir = 'ASC'
           else
-            opts.sort = "-#{field}"
+            opts.sort = '-' + field
             opts.sortDir = 'DESC'
       class: (field) ->
         "has-sort": true

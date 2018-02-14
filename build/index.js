@@ -72,7 +72,7 @@
                   opts.sort = field;
                   return opts.sortDir = 'ASC';
                 } else {
-                  opts.sort = `-${field}`;
+                  opts.sort = '-' + field;
                   return opts.sortDir = 'DESC';
                 }
               }
